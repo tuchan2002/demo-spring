@@ -32,7 +32,7 @@
                   <td>${product.getDescription()}</td>
                   <td>
                     <a href="/products/changeCategory/${product.getProductID()}">
-                      Assign this Product to other Category
+                      Update this product
                     </a>
                 </td>
               </tr>

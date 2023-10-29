@@ -36,5 +36,6 @@
              </tr>
         </c:forEach>
     </table>
+    <a href="/products/insertProduct">Insert new product</a>
 </body>
 </html>
