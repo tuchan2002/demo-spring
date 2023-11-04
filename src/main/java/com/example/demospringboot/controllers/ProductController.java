@@ -20,10 +20,14 @@ import java.util.UUID;
 @Controller
 @RequestMapping(path = "products")
 public class ProductController {
-    @Autowired
     private ProductRepository productRepository;
-    @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    public ProductController(CategoryRepository categoryRepository, ProductRepository productRepository) {
+        this.categoryRepository = categoryRepository;
+        this.productRepository = productRepository;
+    }
 
     @RequestMapping(value = "/getProductsByCategoryID/{categoryID}", method = RequestMethod.GET)
     public String getProductsByCategoryID(ModelMap modelMap, @PathVariable String categoryID) {

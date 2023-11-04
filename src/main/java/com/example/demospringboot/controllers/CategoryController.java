@@ -11,8 +11,12 @@ import org.springframework.web.bind.annotation.RequestMethod;
 @Controller
 @RequestMapping(path = "categories")
 public class CategoryController {
-    @Autowired
     private CategoryRepository categoryRepository;
+
+    @Autowired
+    public CategoryController(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String getAllCategories(ModelMap modelMap) {
